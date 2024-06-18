@@ -32,7 +32,7 @@ const JSONNode: React.FC<JSONNodeProps> = ({ keyName, data, depth }) => {
 	return (
 		<div className={`pl-${depth * 4} py-1`}>
 			<span className="text-blue-600">{keyName}:</span>
-			{typeof data === "string" && <span className="text-green-600 ml-2">"{truncateValue(data)}"</span>}
+			{typeof data === "string" && <span className="text-green-600 ml-2">{truncateValue(data)}</span>}
 			{typeof data === "number" && <span className="text-purple-600 ml-2">{data}</span>}
 			{typeof data === "boolean" && <span className="text-red-600 ml-2">{data.toString()}</span>}
 		</div>

@@ -5,7 +5,6 @@ import { PiReceiptLight } from "react-icons/pi";
 
 import ReceiptJSONView from "./ReceiptJSONView";
 import Spinner from "./Spinner";
-import UploadViewer from "./UploadViewer";
 import { fundAndUpload } from "../utils/fundAndUpload";
 
 import getIrys from "../utils/getIrys";
@@ -150,7 +149,7 @@ export const Uploader: React.FC<UploaderConfigProps> = ({ showImageView = true, 
 	// Display only the last selected file's preview.
 	const memoizedPreviewURL = useMemo(() => {
 		if (previewURL) {
-			return <UploadViewer previewURL={previewURL} checkEncrypted={false} />;
+			return "https://gateway.irys.xyz/" + previewURL;
 		}
 		return null;
 	}, [previewURL]);
@@ -244,8 +243,8 @@ export const Uploader: React.FC<UploaderConfigProps> = ({ showImageView = true, 
 						</div>
 					)}
 					{memoizedPreviewURL && (
-						<div className="h-56 flex justify-center space-y-4 bg-[#EEF0F6]/60 rounded-xl overflow-auto">
-							{memoizedPreviewURL}
+						<div className="h-56 flex justify-center space-y-4 bg-[#EEF0F6]/60 rounded-xl overflow-hidden">
+							<img src={memoizedPreviewURL} className="object-cover w-full h-full" />
 						</div>
 					)}
 

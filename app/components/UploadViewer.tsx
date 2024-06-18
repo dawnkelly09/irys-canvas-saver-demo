@@ -10,16 +10,10 @@ type UploadViewerProps = {
 };
 
 const UploadViewer: React.FC<UploadViewerProps> = ({ previewURL }) => {
-	const [txProcessing, setTxProcessing] = useState(false);
-	const [message, setMessage] = useState("");
-
+	console.log(`URL=https://gateway.irys.xyz/${previewURL}`);
 	return (
 		<div className="w-full h-full rounded-xl resize-none bg-primary object-cover flex items-center justify-center">
-			{txProcessing ? (
-				<Spinner color="text-background" />
-			) : (
-				<img src={`https://gateway.irys.xyz/${previewURL}`} alt="Thumbnail" />
-			)}
+			<img src={`https://gateway.irys.xyz/${previewURL}`} alt="Thumbnail" />
 		</div>
 	);
 };
