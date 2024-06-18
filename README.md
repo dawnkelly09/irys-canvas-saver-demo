@@ -25,7 +25,12 @@ This project is configured to upload to the Irys Devnet and prompt the user to p
 
 ## Components
 
-- Uploader: Funds uploads, uploads single files, uploads groups of files
-- Transaction Feed: Queries transactions
+- `Uploader`: Funds uploads, uploads single files, uploads groups of files
+- `TransactionFeed`: Queries transactions
 
 ## Utility Functions
+
+- `getIrys`: Connects to the Irys network.
+- `fundAndUpload`: Determines the cost to upload a file, funds the Irys network, and permanently uploads the file.
+- `getReceipt`: Uses the Irys Query package to retrieve a receipt by its ID.
+- `titleCase`: Converts a string to title case.
