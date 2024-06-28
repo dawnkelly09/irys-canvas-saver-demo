@@ -19,6 +19,7 @@
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-select": "^5.8.0",
+    "tldraw": "^2.3.0",
     "viem": "^2.15.1",
     "wagmi": "^2.10.2"
   },
