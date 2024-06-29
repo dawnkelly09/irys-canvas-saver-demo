@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: "Base + Irys",
+	title: "Save Canvas to Irys",
 	description: "Build Onchain Summer II Together",
 };
 

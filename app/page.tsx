@@ -4,8 +4,9 @@ import Canvas from './components/Canvas'
 
 export default function Home() {
 	return (
-		<main className="">
-			Hello, World!
+		<main className="text-center">
+			<p>Save Tldraw canvas JSON files to Arweave using Irys & Base</p>
+			<p>Be sure to open the console for your receipt data!</p>
 			<div>
 				<Canvas />
 			</div>

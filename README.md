@@ -1,36 +1,17 @@
-# Irys + Coinbase Wallet
+# Irys + Coinbase Wallet + Tldraw Canvas storage
 
-An example repo for everyone joining Base's Onchain Summer II.
+This project uses the [demo repo](https://github.com/lukecd/irys-coinbase-wallet) created by [Luke Cassady-Dorion](https://github.com/lukecd) (Developer Relations - Irys) which combines Irys + Coinbase Wallet. Out of the box, this repo came with buttons to upload files to & query Irys as well as the Coinbase Wallet connect button built into the Nav. I kept the Connect Wallet button and leveraged Luke's repo to accomplish the following:
 
-With this repo you can:
+1) Add tldraw canvas component to the landing page
+2) Customize the Uploader component to: 
+    -> incorporate the tldraw useEditor hook to store the current state of the tldraw canvas as a JSON object
+    -> send that JSON object to Arweave for storage using Irys and paying with Base ETH/Sepolia
+    -> return the Irys receipt information which allows the user to retrieve the JSON file from the Irys gateway url
 
-- Connect using Coinbase Wallet (via RainbowKit / wagmi / viem)
-- Upload images and pay using $ETH on BASE (the demo is configured to use Sepolia)
-- Query Irys for recent transactions paid for with $ETH on BASE
+These are exciting developments for me as a content creator. I love building educational canvases using tldraw but, I'm always nervous their snapshot links will break and I will lose my work. Now I don't have to worry! 
 
-## Installation
+Next steps: add to my customization of tldraw to integrate: 
 
-1. Rename `.env.local.example` to `.env.local` and add a [free WalletConnect Cloud projectId](https://cloud.walletconnect.com/sign-in)
-
-2. `npm install`
-
-3. `npm run dev`
-
-## Base Mainnet vs Devnet
-
-This project is configured to upload to the Irys Devnet and prompt the user to pay for transactions using $SEPOLIA on BASE. To switch to mainnet:
-
-- Changes instances of `baseSeplia` to `base` in the project
-- Set the value of `NEXT_PUBLIC_NETWORK` in `.env.local` to `mainnet`
-
-## Components
-
-- `Uploader`: Funds uploads, uploads single files, uploads groups of files
-- `TransactionFeed`: Queries transactions
-
-## Utility Functions
-
-- `getIrys`: Connects to the Irys network.
-- `fundAndUpload`: Determines the cost to upload a file, funds the Irys network, and permanently uploads the file.
-- `getReceipt`: Uses the Irys Query package to retrieve a receipt by its ID.
-- `titleCase`: Converts a string to title case.
+1) locating & retrieving these stored JSON objects for rendering correctly as a canvas
+2) move the UI for the Canvas Upload into the tldraw menu for improved UX
+3) share this tool with other content creators to gather feedback for additional canvas customizations they would find useful

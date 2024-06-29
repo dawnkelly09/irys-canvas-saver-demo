@@ -1,14 +1,18 @@
 'use client'
-import { Tldraw } from 'tldraw';
+import { Tldraw, TldrawEditor } from 'tldraw';
 import 'tldraw/tldraw.css'
+import UploaderWithEditor from './UploaderWithEditor';
 
-const Canvas = () => {
+function Canvas() {
     return (
-        <div style={{ position: 'fixed', inset: 40, marginTop: 120 }}>
-            <Tldraw />
-            <button>Save Canvas</button>
+        <div style={{ position: 'relative', height: '80vh', width: '100vw'  }}>
+            <TldrawEditor>
+                <Tldraw>
+                    <UploaderWithEditor />
+                </Tldraw>
+            </TldrawEditor>
         </div>
-    )
+    );
 }
 
-export default Canvas
+export default Canvas;
