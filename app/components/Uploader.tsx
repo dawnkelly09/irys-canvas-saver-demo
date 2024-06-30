@@ -33,8 +33,8 @@ const Uploader: React.FC<UploaderProps> = ({ handleSaveCanvas }) => {
     try {
       await handleSaveCanvas();
       setMessage("Canvas saved successfully!");
-    } catch (e) {
-      setMessage("Error saving canvas: " + e.message);
+    } catch (e: any) {
+      setMessage("Error saving canvas: " +( e.message || e.toString()));
     } finally {
       setTxProcessing(false);
     }
